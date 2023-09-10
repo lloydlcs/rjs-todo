@@ -1,45 +1,38 @@
-import React from 'react';
+import React, { useRef, useState } from 'react';
+
 import './SubmitForm.css';
 
-class SubmitForm extends React.Component {
-	state = {
-		tasksCount: 0
-	};
+export const SubmitForm = ({
+	addTask
+}) => {
+	const [tasksCount, setTasksCount] = useState(0);
+	let inputElm = useRef("");
 
-    constructor(props){
-        super(props);
+	const addItem = (e) => {
+		if (inputElm.value !== "") {
+			var newItem = {
+				text: inputElm.value,
+				id: tasksCount,
+				key: Date.now(),
+				done: false
+			};
+			addTask(newItem);
 
-        this.addItem = this.addItem.bind(this);
-    }
+			setTasksCount(tasksCount+1);
+			inputElm.value = "";
+		}
 
-    addItem(e) {
-    	const { tasksCount } = this.state;
-        if (this._inputElement.value !== "") {
-            var newItem = {
-				text: this._inputElement.value,
-				id: this.state.tasksCount,
-				key: Date.now()
-            };
+		e.preventDefault();
+	}
 
-            this.props.addTask(newItem);
-
-            this.setState({ tasksCount: tasksCount+1 });
-            this._inputElement.value = "";
-        }
-             
-        e.preventDefault();
-    }
-
-    render(){
-        return (
-            <div className='form'>
-                <form onSubmit={this.addItem}>
-                    <input className='input' ref={(a) => this._inputElement = a} placeholder='Add Task' />
-                    <button className='add-button' type='submit'>Add</button>
-                </form>
-            </div>
-        );
-    }
-}
+	return (
+		<div className='form'>
+			<form onSubmit={addItem}>
+				<input className='input' ref={(a) => inputElm = a} placeholder='Add Task' />
+				<button className='add-button' type='submit'>Add</button>
+			</form>
+		</div>
+	);
+};
 
 export default SubmitForm;

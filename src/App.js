@@ -1,38 +1,29 @@
-import React from 'react';
+// import { useState } from "react";
+
+import { useTask } from "./contexts/task.context";
+import SubmitForm from "./components/SubmitForm/SubmitForm";
+import TasksList from "./components/TasksList/TasksList";
+
 import './App.css';
-import SubmitForm from './components/SubmitForm/SubmitForm';
-import TasksList from './components/TasksList/TasksList'
 
-class App extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = { tasks: [] }
+const App = () => {
+    const { tasks, setTask } = useTask();
 
-        this.addTask = this.addTask.bind(this);
-        this.removeTask = this.removeTask.bind(this);
+    const addTask = (task) => {
+        setTask(tasks.concat(task));
     }
 
-    addTask(task) {
-        this.setState((prevState) => {
-            return {
-                tasks: prevState.tasks.concat(task)
-            };
-        });
-    }
+    const removeTask = (id) => {
+        const removedTask = tasks.filter(element => (element.id !== id));
+        setTask(removedTask);
+    };
 
-    removeTask(id) {
-        const tasks = this.state.tasks.filter(element => (element.id !== id));
-        this.setState({ tasks: tasks });
-    }
-
-    render() {
-        return (
-            <div className="App">
-		        <SubmitForm addTask={this.addTask}/>
-		        <TasksList tasks={this.state.tasks} removeTask={this.removeTask}/>
-		     </div>
-        );
-    }
-}
+    return (
+        <div className="App">
+            <SubmitForm addTask={addTask} />
+            <TasksList tasks={tasks} removeTask={removeTask} />
+        </div>
+    );
+};
 
 export default App;

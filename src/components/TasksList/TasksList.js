@@ -1,18 +1,20 @@
-import React from 'react';
-import './TasksList.css'
-import Task from '../Task/Task';
+import Task from "../Task/Task";
+// import { useTask } from "../../contexts/task.context";
 
-class TasksList extends React.Component{
+import './TasksList.css';
 
-    render(){
-        return (
-            <div className='tasks-list-container'>
-                <div className='tasks-list'>                  
-                    { this.props.tasks.map(task => <Task key={task.key} text={task.text} id={task.id} removeTask={this.props.removeTask}/>) }
-                </div>
+export const TasksList = ({
+    tasks,
+    removeTask
+}) => {
+
+    return (
+        <div className='tasks-list-container'>
+            <div className='tasks-list'>
+                { tasks.map(task => <Task key={task.key} text={task.text} id={task.id} removeTask={removeTask} />) }
             </div>
-        );
-    }
-}
+        </div>
+    );
+};
 
 export default TasksList;
