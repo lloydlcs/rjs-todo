@@ -1,6 +1,6 @@
 .tasks-list-container{
     display: flex;
-    width: 40%;
+    width: 100%;
     margin: auto;
     justify-content: center;
 }
