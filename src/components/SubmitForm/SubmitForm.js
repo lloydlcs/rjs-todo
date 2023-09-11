@@ -28,8 +28,8 @@ export const SubmitForm = ({
 	return (
 		<div className='form'>
 			<form onSubmit={addItem}>
-				<input className='input' ref={(a) => inputElm = a} placeholder='Add Task' />
-				<button className='add-button' type='submit'>Add</button>
+				<input className="input" ref={(a) => inputElm = a} placeholder="Add Task" />
+				<button className="add-button" type="submit">新增</button>
 			</form>
 		</div>
 	);

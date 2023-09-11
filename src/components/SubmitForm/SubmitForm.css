@@ -1,27 +1,23 @@
-.form{
-    /*margin-top: 100px;
-    margin-bottom: 50px;*/
+.form {
+    margin: 10px 0;
+    /*margin-bottom: 50px;*/
 }
-
-.input{
+form {
+    display: flex;
+    margin: 0 10px;
+}
+.input {
     width: 80%;
     padding: 10px;
-    border-radius: 15px;
     outline: none;
+    border-radius: 0;
 }
-
-.add-button{
-    width: 10%;
-    padding: 10px;
+.add-button {
+    padding: 5px 10px;
     font-size: 16px;
-    margin: 10px;
-   /* color: rgb(97, 97, 97);*/
-    border: 2px solid rgb(97, 97, 97);
-    border-radius: 15px;
-    outline: none;
+    border-radius: 0;
 }
-
-.add-button:hover{
+.add-button:hover {
     background-color: #ccc;
     cursor: pointer;
 }

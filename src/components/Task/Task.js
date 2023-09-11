@@ -28,8 +28,12 @@ export const Task = ({
                     <h2 className='task-term'>{text}</h2>
                 </div>
                 <div className='buttons-container'>
-                    <button className='done-button' onClick={markDone}>v</button>
-                    <button className='delete-button' onClick={deleteTask}>x</button>
+                    <button className='done-button' onClick={markDone}>
+                        <i class="bi bi-check"></i>
+                    </button>
+                    <button className='delete-button' onClick={deleteTask}>
+                        <i class="bi bi-x"></i>
+                    </button>
                 </div>
             </div>
         </div>

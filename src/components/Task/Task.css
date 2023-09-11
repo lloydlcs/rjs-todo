@@ -4,40 +4,35 @@
     width: 100%;
 
 }
-
-.task-container-background{
+.task-container-background {
     display: flex;
     flex-grow: 1;
     margin-bottom: 6px;
     margin-top: 6px;
-    border-radius: 5px;
     padding-left: 2px;
     padding-right: 2px;
     transition: all 0.2s ease-in-out;
 }
-
-.task-container-background:hover{
+.task-container-background:hover {
     background-color: #ccc;
 }
-
-.task-term-container{
+.task-term-container {
     display: flex;
     width: 90%;
+    align-items: center;
 }
-
-.task-term{
+.task-term {
     font-size: 15px;
     color: #514c4c;
     padding-right: 10px;
     padding-left: 10px;
+    margin: 0;
 }
-
-.buttons-container{
+.buttons-container {
     display: flex;
     align-items: center;
 }
-
-.delete-button, .done-button{
+.delete-button, .done-button {
     display: flex;
     width: 20px;
     height: 20px;
@@ -51,7 +46,6 @@
     justify-content: center;
     align-items: center;
 }
-
 .delete-button:hover, .done-button:hover{
     background-color: rgb(97, 97, 97, 0.5);
     cursor: pointer;
