@@ -1,0 +1,26 @@
+h4 {
+	flex-grow: 1;
+}
+.hbutton {
+	border: 0;
+	background-color: transparent;
+	height: 45px;
+	color: #fff;
+}
+.thead {
+	position: absolute;
+	top: 0;
+	width: 100%;
+	align-items: center;
+	background-color: var(--primary-color);
+	color: #fff;
+}
+.menu-icon {
+	color: #fff;
+}
+
+@media screen and (max-width: 767px) {
+	.thead {
+		position: fixed;
+	}
+}
